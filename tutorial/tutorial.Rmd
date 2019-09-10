@@ -1,0 +1,215 @@
+---
+title: "Tutorial"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+<!-- NOTE: This example and text is taken verbatim from DataCamp, starting with Variable assignment. The text must change. -->
+
+## Getting started
+
+### Exercise 
+
+*Comments*
+
+R makes use of the # sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, Calculate 3 + 4 in the example below is a comment.
+
+When you press the "Run Code" button, nothing happens. R ignores everything on the line after the # sign. Use comments liberally in your code. Use comments to remind yourself what your code chunks do.  
+
+```{r comments, exercise=TRUE}
+# Calculate 3 + 4
+
+```
+
+*Sample Code*
+
+Here is some sample code that adds 3 + 4. To execute the code, press the blue "Run Code" button to the right. The result (7) should appear below the code.
+
+```{r three-plus-four, exercise=TRUE}
+3 + 4
+
+```
+
+You can edit and add code as required by the instructions. For example, change the code to add 6 + 12, then add a second line to subtract 3 from 15.
+
+```{r edit_add_code, exercise=TRUE}
+3 + 4
+
+```
+
+Did you get 18 and 12 for your results?  If not, never fear! Press the "Start over" button to reset the code and try again.
+
+### Exercise with Code
+
+*Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
+
+Now write a function that adds any two numbers and then call it:
+
+```{r add-function, exercise=TRUE, exercise.lines = 5}
+add <- function() {
+  
+}
+```
+
+## Arithmetic in R
+
+In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+
+- Addition: `+`
+- Subtraction: `-`
+- Multiplication: `*`
+- Division: `/`
+- Exponentiation: `^`
+- Modulo: `%%`
+
+The last two might need some explaining:
+
+- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
+
+- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+
+With this knowledge, type 2 ˆ 5 to calculate 2 to the power 5. Type 28 %% 6 to calculate 28 modulo 6. Run the code.
+
+```{r arithmetic-one, exercise=TRUE, exercise.lines = 20}
+# An addition
+5+5
+# A subtraction
+5-5
+# A multiplication
+3*5
+# A division
+(5 + 5) / 2
+# Exponentiation
+
+
+# Modulo
+
+
+
+```
+
+
+## Variable Assignment
+
+A basic concept in programming is called a **variable.**
+
+A variable allows you to store a value (e.g., 4) or an object (e.g., a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable.
+
+You can assign a value 4 to a variable `my_var` with the command. In RStudio, press `option/alt + - ` to enter the ` <- ` with appropriate spacing. Or, take the long way and type the less than symbol followed by a dash. Your choice. *Work smart, not hard.*
+
+You can see what is stored in a variable by entering the variable name on a line by itself.
+
+```{r var_assignment_1, echo=TRUE, exercise=FALSE, exercise.eval=TRUE}
+my_var <- 4
+
+my_var
+```
+
+
+#### Instructions
+
+Complete the code in the chunk such that it assigns the value 42 to the variable `x`, and then view the contents of `x`. Notice that when you ask R to print `x`, the value 42 appears. At least it will if you did this correctly!
+
+
+```{r assign_42, exercise=TRUE, exercise.lines=6, exercise.cap="Meaning of Life"}
+# Assign the value 42 to x
+
+# Print out the value of the variable x
+
+
+
+```
+
+
+Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`.
+
+#### Instructions
+
+- Type the following code in the code chunk: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
+
+- Type `my_apples` below the second comment. This will print out the value of `my_apples`.
+
+Run the code and look at the console: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+
+```{r apples1, exercise=TRUE, exercise.lines=6}
+# Assign the value 5 to the variable my_apples
+
+
+# Print out the value of the variable my_apples
+
+
+#
+```
+
+Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way:
+
+```{r eval=FALSE}
+my_apples + my_oranges
+```
+
+
+#### Instructions
+
+- Assign to `my_oranges` the value 6, below the code for `my_apples`.
+
+- Add the variables `my_apples` and `my_oranges` and have R print the result.
+
+- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+
+```{r, apples_and_oranges1, exercise=TRUE, exercise.lines=15, exercise.eval=TRUE}
+# Assign a value to the variables my_apples and my_oranges
+my_apples <- 5
+
+
+# Add these two variables together
+
+
+# Create the variable my_fruit
+
+
+#
+```
+
+### Exercise with Hint
+
+*Here's an exercise where the chunk is pre-evaulated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
+
+Modify the following code to limit the number of rows printed to 5:
+
+```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
+mtcars
+```
+
+```{r print-limit-hint}
+head(mtcars)
+```
+
+### Quiz
+
+*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
+
+Some questions to verify that you understand the purposes of various base and recommended R packages:
+
+```{r quiz}
+quiz(
+  question("Which package contains functions for installing other R packages?",
+    answer("base"),
+    answer("tools"),
+    answer("utils", correct = TRUE),
+    answer("codetools")
+  ),
+  question("Which of the R packages listed below are used to create plots?",
+    answer("lattice", correct = TRUE),
+    answer("tools"),
+    answer("stats"),
+    answer("grid", correct = TRUE)
+  )
+)
+```
+
